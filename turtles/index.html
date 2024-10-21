@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>乌龟知识库</title>
+    <title>Turtle Home</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="turtle-knowledge-base">
       <div class="language-switcher">
-        <button onclick="switchLanguage('zh')" class="active">中文</button>
-        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('en')" class="active">English</button>
+        <button onclick="switchLanguage('zh')">中文</button>
       </div>
       <h1 data-translate="title">乌龟知识库</h1>
 
       <div class="tabs">
-        <button class="tab active" onclick="openTab(event, 'care')" data-translate="care">
+        <button
+          class="tab active"
+          onclick="openTab(event, 'care')"
+          data-translate="care"
+        >
           饲养指南
         </button>
-        <button class="tab" onclick="openTab(event, 'equipment')" data-translate="equipment">
+        <button
+          class="tab"
+          onclick="openTab(event, 'equipment')"
+          data-translate="equipment"
+        >
           装备推荐
         </button>
-        <button class="tab" onclick="openTab(event, 'photos')" data-translate="photos">照片分享</button>
+        <button
+          class="tab"
+          onclick="openTab(event, 'photos')"
+          data-translate="photos"
+        >
+          照片分享
+        </button>
       </div>
 
       <div id="care" class="tab-content tab-pane active">
@@ -186,31 +200,31 @@
           equipment: "Equipment Recommendations",
           photos: "Photo Gallery",
           // Add more translations as needed
-        }
+        },
       };
 
       function switchLanguage(lang) {
         document.documentElement.lang = lang;
-        document.querySelectorAll('[data-translate]').forEach(element => {
-          const key = element.getAttribute('data-translate');
+        document.querySelectorAll("[data-translate]").forEach((element) => {
+          const key = element.getAttribute("data-translate");
           element.textContent = translations[lang][key];
         });
-        
+
         // Update active state of language switcher buttons
-        document.querySelectorAll('.language-switcher button').forEach(button => {
-          button.classList.toggle('active', button.onclick.toString().includes(lang));
+        document.querySelectorAll(".language-switcher button").forEach((button) => {
+          button.classList.toggle("active", button.onclick.toString().includes(lang));
         });
 
         // Reload content for care and equipment tabs
-        if (document.getElementById('care').classList.contains('active')) {
+        if (document.getElementById("care").classList.contains("active")) {
           loadContent(`guidance_${lang}.md`, "readme-content");
-        } else if (document.getElementById('equipment').classList.contains('active')) {
+        } else if (document.getElementById("equipment").classList.contains("active")) {
           loadContent(`goods_${lang}.md`, "goods-content");
         }
       }
 
-      // Initial load
-      switchLanguage('zh');
+      // Change the initial load to English
+      switchLanguage("en");
     </script>
   </body>
 </html>
