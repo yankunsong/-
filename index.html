@@ -216,14 +216,21 @@
         });
 
         // Update active state of language switcher buttons
-        document.querySelectorAll(".language-switcher button").forEach((button) => {
-          button.classList.toggle("active", button.onclick.toString().includes(lang));
-        });
+        document
+          .querySelectorAll(".language-switcher button")
+          .forEach((button) => {
+            button.classList.toggle(
+              "active",
+              button.onclick.toString().includes(lang)
+            );
+          });
 
         // Reload content for care and equipment tabs
         if (document.getElementById("care").classList.contains("active")) {
           loadContent(`guidance_${lang}.md`, "readme-content");
-        } else if (document.getElementById("equipment").classList.contains("active")) {
+        } else if (
+          document.getElementById("equipment").classList.contains("active")
+        ) {
           loadContent(`goods_${lang}.md`, "goods-content");
         }
         // Note: The photos tab doesn't need content loading as it's static
@@ -231,6 +238,22 @@
 
       // Initial load remains in English
       switchLanguage("en");
+    </script>
+    <script type="text/javascript">
+      (function (d, t) {
+        var v = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+          window.voiceflow.chat.load({
+            verify: { projectID: "66f166a6f9175738e7945492" },
+            url: "https://general-runtime.voiceflow.com",
+            versionID: "production",
+          });
+        };
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+      })(document, "script");
     </script>
   </body>
 </html>
