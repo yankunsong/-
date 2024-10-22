@@ -42,13 +42,13 @@
 
       <div id="care" class="tab-content tab-pane active">
         <div id="readme-content" class="readme-content">
-          <!-- guidance.md 内容将被动态加载到这里 -->
+          <!-- Content from guidance.md will be dynamically loaded here -->
         </div>
       </div>
 
       <div id="equipment" class="tab-content tab-pane">
         <div id="goods-content" class="goods-content">
-          <!-- goods.md 内容将被动态加载到这里 -->
+          <!-- Content from goods.md will be dynamically loaded here -->
         </div>
       </div>
 
@@ -122,7 +122,7 @@
       </div>
     </div>
 
-    <!-- 添加 Lightbox 元素 -->
+    <!-- Lightbox element -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
       <img id="lightbox-img" src="" alt="Full size image" />
     </div>
@@ -165,11 +165,11 @@
             console.error(`Error loading ${filename}:`, error);
             document.getElementById(
               elementId
-            ).innerHTML = `<p>加载${filename}内容失败，请稍后再试。错误信息：${error.message}</p>`;
+            ).innerHTML = `<p>Failed to load ${filename} content. Please try again later. Error: ${error.message}</p>`;
           });
       }
 
-      // 初始加载两个标签的内容
+      // Initial load of content for two tabs
       loadContent("guidance_en.md", "readme-content");
       loadContent("goods_en.md", "goods-content");
 
@@ -226,6 +226,7 @@
         } else if (document.getElementById("equipment").classList.contains("active")) {
           loadContent(`goods_${lang}.md`, "goods-content");
         }
+        // Note: The photos tab doesn't need content loading as it's static
       }
 
       // Initial load remains in English
