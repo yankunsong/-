@@ -11,6 +11,7 @@
     <div class="turtle-knowledge-base">
       <div class="language-switcher">
         <button onclick="switchLanguage('en')" class="active">English</button>
+        <button onclick="switchLanguage('es')">Español</button>
         <button onclick="switchLanguage('zh')">中文</button>
       </div>
       <h1 data-translate="title">乌龟知识库</h1>
@@ -185,21 +186,25 @@
         lightbox.style.display = "none";
       }
 
-      // Add these new functions and objects
+      // Update the translations object to include Spanish
       const translations = {
         zh: {
           title: "乌龟知识库",
           care: "饲养指南",
           equipment: "装备推荐",
           photos: "照片分享",
-          // Add more translations as needed
         },
         en: {
           title: "Turtle Knowledge Base",
           care: "Care Guide",
           equipment: "Equipment Recommendations",
           photos: "Photo Gallery",
-          // Add more translations as needed
+        },
+        es: {
+          title: "Base de Conocimientos sobre Tortugas",
+          care: "Guía de Cuidados",
+          equipment: "Recomendaciones de Equipamiento",
+          photos: "Galería de Fotos",
         },
       };
 
@@ -223,7 +228,7 @@
         }
       }
 
-      // Change the initial load to English
+      // Initial load remains in English
       switchLanguage("en");
     </script>
   </body>

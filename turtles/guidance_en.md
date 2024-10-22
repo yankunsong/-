@@ -24,6 +24,13 @@ There are three common sources of temperature differences:
 
 ![image](https://github.com/user-attachments/assets/a8db0fd5-985b-4c51-8f94-b10c936d1389)
 
+### Heated Wintering
+In most regions, autumn and winter temperatures fall below 68°F. However, the optimal water temperature for turtles is between 77-86°F. For young turtles, we can consider heating the water during winter. This allows them to remain active and continue eating and growing normally.
+
+If using a heater, pay attention to two points: 1. The heater must be fully submerged in water; 2. As shown in the previous image, set an appropriate water depth to ensure the turtle's shell doesn't rise above the water surface.
+
+Additionally, be careful about the temperature difference when changing the water.
+
 ## Water Depth
 
 Turtles like the Red-eared slider and Chinese pond turtles can live both on land and in water. However, remember that turtles breathe with their lungs, so they need to surface for air occasionally; they cannot stay submerged like fish.
